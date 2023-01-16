@@ -2,15 +2,19 @@ import Todos from './components/Todos';
 import TodoClass from './Models/Todo';
 import TodoForm from './components/TodoForm';
 
+import { useState } from 'react';
+
 function App() {
-  const todos = [
+  const [todos, setTodos] = useState<TodoClass[]>([
     new TodoClass('Learn React'),
     new TodoClass('Learn TypeScript')
-  ]
+  ])
 
   const addTodoHandler = (Text: string) => {
     const newTodo = new TodoClass(Text)
-    todos.push(newTodo)
+    setTodos((prevState) => {
+      return prevState.concat(newTodo)
+    })
   }
 
   return (
