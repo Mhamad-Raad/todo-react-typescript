@@ -1,6 +1,8 @@
-const TodoItem: React.FC <{text: string}>= ({text}) => {
+import css from './TodoItem.module.css';
+
+const TodoItem: React.FC<{ text: string }> = ({ text }) => {
   return (
-    <li>
+    <li className={css.item}>
       {text}
     </li>
   );
