@@ -1,5 +1,5 @@
 {
-  "name": "app-name",
+  "name": "todo-react-typescript",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3"
   }
 }
