@@ -6,7 +6,6 @@ const TodoForm: React.FC<{addTodo: (enteredText: string) => void }> = ({addTodo}
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     const enteredText = inputRef.current!.value;
-    console.log(typeof enteredText);
 
     if (enteredText?.trim().length === 0) {
       return;
