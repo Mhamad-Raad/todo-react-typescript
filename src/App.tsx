@@ -5,10 +5,7 @@ import TodoForm from './components/TodoForm';
 import { useState } from 'react';
 
 function App() {
-  const [todos, setTodos] = useState<TodoClass[]>([
-    new TodoClass('Learn React'),
-    new TodoClass('Learn TypeScript')
-  ])
+  const [todos, setTodos] = useState<TodoClass[]>([])
 
   const addTodoHandler = (Text: string) => {
     const newTodo = new TodoClass(Text)
@@ -17,10 +14,16 @@ function App() {
     })
   }
 
+  const removeTodoHandler = (id: string) => {
+    setTodos((prevState) => {
+      return prevState.filter(todo => todo.id !== id)
+    })
+  }
+
   return (
     <div className="App">
       <TodoForm addTodo={addTodoHandler} />
-      <Todos items={todos} />
+      <Todos items={todos} removeTodo={removeTodoHandler} />
     </div>
   );
 }
