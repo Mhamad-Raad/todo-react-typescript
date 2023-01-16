@@ -8,7 +8,7 @@ function App() {
   ]
   return (
     <div className="App">
-      <Todos items={['Learn React', 'Learn TypeScript']} />
+      <Todos items={todos} />
     </div>
   );
 }
